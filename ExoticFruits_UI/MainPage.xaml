@@ -1,0 +1,249 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:ExoticFruits_UI"
+             x:Class="ExoticFruits_UI.MainPage">
+
+<ContentPage.BindingContext>
+    <vm:MainViewModel/>
+</ContentPage.BindingContext>
+    <ScrollView>
+
+
+    <StackLayout>
+         <Grid Margin="30,60,30,30">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="55"/>
+        </Grid.ColumnDefinitions>
+
+        <Label Grid.Column="0"
+               Grid.Row="0"
+               Text="Exotic Fruits"
+               FontAttributes="Bold"
+               FontSize="28"/>
+
+        <Label Grid.Column="0"
+               Grid.Row="1"
+               Text="More than 70 exotic fruits"
+               FontAttributes="None"
+               FontSize="12"/>
+
+
+        <Frame
+            Grid.Column="1"
+            Grid.RowSpan="2"
+            BackgroundColor="#fed329"
+            Padding="10"
+            BorderColor="Transparent"
+            HasShadow="False"
+            CornerRadius="10">
+
+            <ImageButton
+            
+            Source="menu.png"
+            Aspect="AspectFill"
+            VerticalOptions="CenterAndExpand">
+
+            </ImageButton>
+
+        </Frame>
+    
+    </Grid>
+
+          <!--Carousel de Frutas-->
+       <CarouselView ItemsSource="{Binding fruits}" HeightRequest="300" PeekAreaInsets="0,0,220,0">
+           <CarouselView.ItemTemplate>
+               <DataTemplate>
+
+
+                  
+        <StackLayout >
+            <Frame
+                HeightRequest="240"
+                WidthRequest="150"
+                BackgroundColor="{Binding backgroundColor}" Padding="0"
+                HasShadow="False" Margin="10"
+                HorizontalOptions="CenterAndExpand"
+                CornerRadius="10">
+
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="140"/>
+                        <RowDefinition Height="50"/>
+                        <RowDefinition Height="25"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="100"/>
+                        <ColumnDefinition Width="30"/>
+                    </Grid.ColumnDefinitions>
+
+                 <Image Grid.Row="0"
+                        Grid.ColumnSpan="2"
+                    Source="{Binding imgSource}"/>
+
+                  <Label Grid.Row="1"
+                         Grid.ColumnSpan="2"
+                         Text="{Binding fruitName}"
+                         FontAttributes="Bold"
+                         Margin="20,0,20,0"
+                         HorizontalOptions="Center"
+                         VerticalOptions="Center"/>
+
+
+                  <Label Grid.Row="2"
+                         Text="{Binding fruitPrice}"
+                         FontAttributes="Bold"
+                         Margin="20,0,20,0"/>
+                                                       
+
+                   <ImageButton Grid.Row="2"
+                                Grid.Column="1"
+                                Source="plus.png"
+                                HorizontalOptions="End"
+                                VerticalOptions="Center"/>
+                </Grid>
+
+            </Frame>
+
+        </StackLayout>
+
+
+               </DataTemplate>
+           </CarouselView.ItemTemplate>
+       </CarouselView>
+
+
+    
+
+        <Grid Margin="30,0,30,30">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="55"/>
+        </Grid.ColumnDefinitions>
+
+        <Label Grid.Column="0"
+               Grid.Row="0"
+               Text="Markets"
+               FontAttributes="Bold"
+               FontSize="28"/>
+
+        <Label Grid.Column="0"
+               Grid.Row="1"
+               Text="4 markets near you"
+               FontAttributes="None"
+               FontSize="12"/>
+
+        </Grid>
+
+
+        <StackLayout >
+
+
+             <Grid Margin="30,0,30,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="200"/>
+                </Grid.ColumnDefinitions>
+
+              <Frame
+                Grid.Column="0"
+                Grid.Row="0"
+                Grid.RowSpan="3"
+                Padding="0"
+                Margin="0"
+                HasShadow="False"
+                CornerRadius="10"
+                IsClippedToBounds="True"
+                  VerticalOptions="StartAndExpand"
+                  HorizontalOptions="StartAndExpand"
+                  HeightRequest="60">
+                            
+
+                         <Image 
+                             Source="market2.jpg"
+                             Aspect="AspectFill"
+                             
+                             VerticalOptions="Center"
+                             HorizontalOptions="Center"
+                            />
+            </Frame>
+
+                 <Label Grid.Column="1"
+                        Grid.Row="0"
+                        Text="Brooklyn Fruit Valley"
+                        Padding="0"
+                        Margin="0"
+                        HorizontalOptions="Start"/>
+
+                  <Label Grid.Column="1"
+                        Grid.Row="1"
+                        Text="09:00-21:00"
+                        Padding="0"
+                        Margin="0"
+                        HorizontalOptions="Start"/>
+
+                   <Label Grid.Column="1"
+                        Grid.Row="2"
+                        Text="4.9"
+                        Padding="0"
+                        Margin="0"
+                        HorizontalOptions="Start"/>
+
+
+                                 
+
+
+            </Grid>
+
+
+           
+
+            <!--<ScrollView>
+                <ListView>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.View>
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                        <RowDefinition Height="*"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+
+
+                                </Grid>
+                            </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            </ScrollView>-->
+        </StackLayout>
+
+
+ 
+    </StackLayout>
+   
+    
+</ScrollView>
+</ContentPage>
