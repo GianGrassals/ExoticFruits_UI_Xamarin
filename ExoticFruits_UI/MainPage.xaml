@@ -2,16 +2,28 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:vm="clr-namespace:ExoticFruits_UI"
-             x:Class="ExoticFruits_UI.MainPage">
-
+             x:Class="ExoticFruits_UI.MainPage"
+             >
 <ContentPage.BindingContext>
     <vm:MainViewModel/>
 </ContentPage.BindingContext>
-    <ScrollView>
 
 
-    <StackLayout>
-         <Grid Margin="30,60,30,30">
+    <Grid BackgroundColor="#fed329">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="780"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+    
+        <Frame Padding="0" Margin="0"  Grid.Row="0"  CornerRadius="45" BackgroundColor="White" HasShadow="True">
+            <ScrollView >
+      
+
+    <StackLayout Padding="0" Margin="0" >
+   
+       
+         <Grid Margin="30,60,30,30" >
         <Grid.RowDefinitions>
             <RowDefinition Height="30"/>
             <RowDefinition Height="*"/>
@@ -54,22 +66,24 @@
         </Frame>
     
     </Grid>
-
+        
           <!--Carousel de Frutas-->
-       <CarouselView ItemsSource="{Binding fruits}" HeightRequest="300" PeekAreaInsets="0,0,220,0">
+       
+              <CarouselView ItemsSource="{Binding fruits}" HeightRequest="300" PeekAreaInsets="0,0,220,0" BackgroundColor="Transparent">
+   
+
            <CarouselView.ItemTemplate>
                <DataTemplate>
 
-
-                  
-        <StackLayout >
+        <StackLayout  >
             <Frame
                 HeightRequest="240"
                 WidthRequest="150"
                 BackgroundColor="{Binding backgroundColor}" Padding="0"
                 HasShadow="False" Margin="10"
                 HorizontalOptions="CenterAndExpand"
-                CornerRadius="10">
+                CornerRadius="10"
+                >
 
                 <Grid>
                     <Grid.RowDefinitions>
@@ -118,9 +132,14 @@
        </CarouselView>
 
 
-    
 
-        <Grid Margin="30,0,30,30">
+     
+
+
+
+
+        
+        <Grid Margin="30,0,30,30" >
         <Grid.RowDefinitions>
             <RowDefinition Height="30"/>
             <RowDefinition Height="*"/>
@@ -145,105 +164,142 @@
         </Grid>
 
 
-        <StackLayout >
+
+    
+    
+        
+    
+<ListView ItemsSource="{Binding markets}" HasUnevenRows="True"   SeparatorVisibility="None" Margin="0" BackgroundColor="Transparent">
+
+  
+        <ListView.ItemTemplate >
+            
+            <DataTemplate>
+              
+                <ViewCell >
+              
+
+               <StackLayout HorizontalOptions="CenterAndExpand"  Padding="0" Margin="0" BackgroundColor="White" >
 
 
-             <Grid Margin="30,0,30,0">
+             <Grid>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="75"/>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="100"/>
                     <ColumnDefinition Width="200"/>
                 </Grid.ColumnDefinitions>
 
-              <Frame
-                Grid.Column="0"
-                Grid.Row="0"
-                Grid.RowSpan="3"
-                Padding="0"
-                Margin="0"
-                HasShadow="False"
-                CornerRadius="10"
-                IsClippedToBounds="True"
-                  VerticalOptions="StartAndExpand"
-                  HorizontalOptions="StartAndExpand"
-                  HeightRequest="60">
-                            
 
-                         <Image 
-                             Source="market2.jpg"
-                             Aspect="AspectFill"
-                             
-                             VerticalOptions="Center"
-                             HorizontalOptions="Center"
-                            />
-            </Frame>
+                 <StackLayout Grid.Column="0"
+                              Grid.Row="0"
+                              Grid.RowSpan="3"
+                              Padding="0"
+                              Margin="0,0,10,0"
+                              >
 
-                 <Label Grid.Column="1"
-                        Grid.Row="0"
-                        Text="Brooklyn Fruit Valley"
+                <Frame IsClippedToBounds="true"
+                       Margin="0"
+                       Padding="0"
+                       HasShadow="False">
+                    <Image 
+                Source="{Binding imgSource}"
+                Aspect="AspectFill"
+                VerticalOptions="StartAndExpand"
+                HorizontalOptions="CenterAndExpand"/>
+            
+                </Frame>
+                 
+
+                
+                 </StackLayout>
+              
+
+                 <StackLayout Grid.Column="1"
+                              Padding="0"
+                              Margin="0"
+                               >
+                 <StackLayout Padding="0" Margin="0">
+                      <Label 
+                        FontAttributes="Bold"
+                        Text="{Binding marketName}"
+                        Padding="0"
+                        Margin="0"
+                        HorizontalOptions="StartAndExpand"/>
+                 </StackLayout>
+                 
+                   <StackLayout > 
+                       <Label
+                        FontSize="12"
+                        Text="{Binding marketSchedule}"
+                        Padding="0"
+                        Margin="0"
+                        HorizontalOptions="Start"/>
+                   </StackLayout>
+
+                  <StackLayout Orientation="Horizontal"
+                               Spacing="10"
+                               HeightRequest="13">
+
+                      <Image Source="estrella.png"
+                             WidthRequest="20"
+                             VerticalOptions="Center"/>
+
+                        <Label
+                        FontSize="12"
+                        Text="{Binding startsRate}"
+                        TextColor="#a87255"
+                        FontAttributes="Bold"
                         Padding="0"
                         Margin="0"
                         HorizontalOptions="Start"/>
 
-                  <Label Grid.Column="1"
-                        Grid.Row="1"
-                        Text="09:00-21:00"
-                        Padding="0"
-                        Margin="0"
-                        HorizontalOptions="Start"/>
-
-                   <Label Grid.Column="1"
-                        Grid.Row="2"
-                        Text="4.9"
+                        <Label
+                        FontSize="12"
+                        Text="|"
+                        TextColor="#a87255"
                         Padding="0"
                         Margin="0"
                         HorizontalOptions="Start"/>
 
 
-                                 
+                      <Image Source="pin.png"/>
 
-
+                        <Label
+                        FontSize="12"
+                        Text="{Binding distance}"
+                        TextColor="#a87255"
+                        FontAttributes="Bold"
+                        Padding="0"
+                        Margin="0"
+                        HorizontalOptions="Start"/>
+                  </StackLayout>
+                 </StackLayout>
             </Grid>
-
-
-           
-
-            <!--<ScrollView>
-                <ListView>
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <ViewCell.View>
-                                <Grid>
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition Height="*"/>
-                                        <RowDefinition Height="*"/>
-                                        <RowDefinition Height="*"/>
-                                    </Grid.RowDefinitions>
-                                    <Grid.ColumnDefinitions>
-                                        <ColumnDefinition Width="*"/>
-                                        <ColumnDefinition Width="*"/>
-                                    </Grid.ColumnDefinitions>
-
-
-                                </Grid>
-                            </ViewCell.View>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-
-            </ScrollView>-->
         </StackLayout>
+                       
+               
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+        
+    </ListView>
 
-
- 
-    </StackLayout>
    
+    </StackLayout>
+    </ScrollView>
+        </Frame>
+
     
-</ScrollView>
+
+    <StackLayout Grid.Row="1" BackgroundColor="#fed329" Padding="0" Margin="0">
+
+    </StackLayout>
+</Grid>
+
+
+
+    
+   
 </ContentPage>

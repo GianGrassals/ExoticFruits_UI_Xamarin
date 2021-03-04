@@ -23,19 +23,31 @@ namespace ExoticFruits_UI
                 }
 
             }
-         
-         
 
-        
-        public MainViewModel()
+        private ObservableCollection<Markets> Markets;
+
+        public ObservableCollection<Markets> markets
         {
-            fruits = new ObservableCollection<Fruits>();
-         
-            AddData();
+            get { return Markets; }
+            set { Markets = value;
+
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("markets"));
+                }
         }
 
 
-        private void AddData()
+
+        public MainViewModel()
+        {
+            fruits = new ObservableCollection<Fruits>();
+            markets = new ObservableCollection<Markets>();
+         
+            AddDataFruits();
+            AddDataMarkets();
+        }
+
+
+        private void AddDataFruits()
         {
             fruits.Add(new Fruits
             {
@@ -65,5 +77,45 @@ namespace ExoticFruits_UI
 
             });
         }
+
+
+
+        private void AddDataMarkets()
+        {
+            markets.Add(new Markets
+            {
+                id = 0,
+                marketName = "Brooklyn Fruit Valley",
+                marketSchedule = "09:00-21:00",
+                imgSource = "market1.jpg",
+                startsRate = 4.9,
+                distance = "2 km"
+
+            });
+            markets.Add(new Markets
+            {
+                id = 1,
+                marketName = "24/7 Fruit Market",
+                marketSchedule = "00:00-24:00",
+                imgSource = "market2.jpg",
+                startsRate = 4.5,
+                distance = "3 km"
+                
+
+            });
+            markets.Add(new Markets
+            {
+                id = 2,
+                marketName = "Exotic Fruits Market",
+                marketSchedule = "00:00-24:00",
+                imgSource = "market3.jpg",
+                startsRate = 4.3,
+                distance = "4 km"
+
+
+            });
+
+        }
+
     }
 }

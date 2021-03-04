@@ -141,5 +141,10 @@
     <BundleResource Include="Resources\kiwi.png" />
     <BundleResource Include="Resources\market.jpg" />
     <BundleResource Include="Resources\market2.jpg" />
+    <BundleResource Include="Resources\estrella.png" />
+    <BundleResource Include="Resources\pin.png" />
+    <BundleResource Include="Resources\market1.jpeg" />
+    <BundleResource Include="Resources\market3.jpg" />
+    <BundleResource Include="Resources\market1.jpg" />
   </ItemGroup>
 </Project>
