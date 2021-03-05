@@ -146,5 +146,8 @@
     <BundleResource Include="Resources\market1.jpeg" />
     <BundleResource Include="Resources\market3.jpg" />
     <BundleResource Include="Resources\market1.jpg" />
+    <BundleResource Include="Resources\cartstrawberry.png" />
+    <BundleResource Include="Resources\cartkiwi.png" />
+    <BundleResource Include="Resources\cartwatermelon.png" />
   </ItemGroup>
 </Project>

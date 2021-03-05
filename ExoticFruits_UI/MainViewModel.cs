@@ -36,14 +36,31 @@ namespace ExoticFruits_UI
         }
 
 
+        private ObservableCollection<FruitCart> FruitCart;
+
+        public ObservableCollection<FruitCart> fruitsCart
+        {
+            get { return FruitCart; }
+            set
+            {
+                FruitCart = value;
+
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs("fruitsCart"));
+            }
+        }
+
+
 
         public MainViewModel()
         {
             fruits = new ObservableCollection<Fruits>();
             markets = new ObservableCollection<Markets>();
-         
+            fruitsCart = new ObservableCollection<FruitCart>();
+
             AddDataFruits();
             AddDataMarkets();
+            AddFruitCart();
+
         }
 
 
@@ -114,6 +131,34 @@ namespace ExoticFruits_UI
 
 
             });
+
+        }
+
+        private void AddFruitCart()
+        {
+            fruitsCart.Add(new FruitCart
+            {
+
+                fruitImage = "cartkiwi.png",
+                fruitQuantity ="x3"
+
+            });
+            fruitsCart.Add(new FruitCart
+            {
+
+                fruitImage = "cartwatermelon.png",
+                fruitQuantity = "x5"
+
+            });
+            fruitsCart.Add(new FruitCart
+            {
+
+                fruitImage = "cartstrawberry.png",
+                fruitQuantity = "x2"
+
+            });
+
+
 
         }
 

@@ -9,297 +9,168 @@
 </ContentPage.BindingContext>
 
 
-    <Grid BackgroundColor="#fed329">
-        <Grid.RowDefinitions>
-            <RowDefinition Height="780"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
+<Grid BackgroundColor="#fed329">
+<Grid.RowDefinitions>
+    <RowDefinition Height="13*"/>
+    <RowDefinition Height="*"/>
+</Grid.RowDefinitions>
 
     
-        <Frame Padding="0" Margin="0"  Grid.Row="0"  CornerRadius="45" BackgroundColor="White" HasShadow="True">
-            <ScrollView >
-      
-
-    <StackLayout Padding="0" Margin="0" >
-   
-       
-         <Grid Margin="30,60,30,30" >
-        <Grid.RowDefinitions>
-            <RowDefinition Height="30"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="55"/>
-        </Grid.ColumnDefinitions>
-
-        <Label Grid.Column="0"
-               Grid.Row="0"
-               Text="Exotic Fruits"
-               FontAttributes="Bold"
-               FontSize="28"/>
-
-        <Label Grid.Column="0"
-               Grid.Row="1"
-               Text="More than 70 exotic fruits"
-               FontAttributes="None"
-               FontSize="12"/>
-
-
-        <Frame
-            Grid.Column="1"
-            Grid.RowSpan="2"
-            BackgroundColor="#fed329"
-            Padding="10"
-            BorderColor="Transparent"
-            HasShadow="False"
-            CornerRadius="10">
-
-            <ImageButton
-            
-            Source="menu.png"
-            Aspect="AspectFill"
-            VerticalOptions="CenterAndExpand">
-
-            </ImageButton>
-
-        </Frame>
-    
-    </Grid>
-        
-          <!--Carousel de Frutas-->
-       
-              <CarouselView ItemsSource="{Binding fruits}" HeightRequest="300" PeekAreaInsets="0,0,220,0" BackgroundColor="Transparent">
-   
-
-           <CarouselView.ItemTemplate>
-               <DataTemplate>
-
-        <StackLayout  >
-            <Frame
-                HeightRequest="240"
-                WidthRequest="150"
-                BackgroundColor="{Binding backgroundColor}" Padding="0"
-                HasShadow="False" Margin="10"
-                HorizontalOptions="CenterAndExpand"
-                CornerRadius="10"
-                >
-
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="140"/>
-                        <RowDefinition Height="50"/>
-                        <RowDefinition Height="25"/>
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="100"/>
-                        <ColumnDefinition Width="30"/>
-                    </Grid.ColumnDefinitions>
-
-                 <Image Grid.Row="0"
-                        Grid.ColumnSpan="2"
-                    Source="{Binding imgSource}"/>
-
-                  <Label Grid.Row="1"
-                         Grid.ColumnSpan="2"
-                         Text="{Binding fruitName}"
-                         FontAttributes="Bold"
-                         Margin="20,0,20,0"
-                         HorizontalOptions="Center"
-                         VerticalOptions="Center"/>
-
-
-                  <Label Grid.Row="2"
-                         Text="{Binding fruitPrice}"
-                         FontAttributes="Bold"
-                         Margin="20,0,20,0"/>
-                                                       
-
-                   <ImageButton Grid.Row="2"
-                                Grid.Column="1"
-                                Source="plus.png"
-                                HorizontalOptions="End"
-                                VerticalOptions="Center"/>
-                </Grid>
-
-            </Frame>
-
-        </StackLayout>
-
-
-               </DataTemplate>
-           </CarouselView.ItemTemplate>
-       </CarouselView>
-
-
-
-     
-
-
-
-
-        
-        <Grid Margin="30,0,30,30" >
-        <Grid.RowDefinitions>
-            <RowDefinition Height="30"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="55"/>
-        </Grid.ColumnDefinitions>
-
-        <Label Grid.Column="0"
-               Grid.Row="0"
-               Text="Markets"
-               FontAttributes="Bold"
-               FontSize="28"/>
-
-        <Label Grid.Column="0"
-               Grid.Row="1"
-               Text="4 markets near you"
-               FontAttributes="None"
-               FontSize="12"/>
-
-        </Grid>
-
-
-
-    
-    
-        
-    
-<ListView ItemsSource="{Binding markets}" HasUnevenRows="True"   SeparatorVisibility="None" Margin="0" BackgroundColor="Transparent">
-
-  
-        <ListView.ItemTemplate >
-            
-            <DataTemplate>
-              
-                <ViewCell >
-              
-
-               <StackLayout HorizontalOptions="CenterAndExpand"  Padding="0" Margin="0" BackgroundColor="White" >
-
-
-             <Grid>
+<Frame Padding="0" Margin="0"  Grid.Row="0"  CornerRadius="45" BackgroundColor="White" HasShadow="True">
+    <ScrollView >
+        <StackLayout Padding="0" Margin="0" >
+            <Grid Margin="30,60,30,30" >
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="75"/>
+                    <RowDefinition Height="30"/>
+                    <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="100"/>
-                    <ColumnDefinition Width="200"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="55"/>
                 </Grid.ColumnDefinitions>
+      
+                <Label Grid.Column="0" Grid.Row="0" Text="Exotic Fruits" FontAttributes="Bold" FontSize="28"/>
+                <Label Grid.Column="0" Grid.Row="1" Text="More than 70 exotic fruits" FontAttributes="None" FontSize="12"/>
+
+                <Frame Grid.Column="1" Grid.RowSpan="2" BackgroundColor="#fed329" Padding="10" BorderColor="Transparent"  HasShadow="False" CornerRadius="10">
+                    <ImageButton Source="menu.png" Aspect="AspectFill" VerticalOptions="CenterAndExpand"/>
+ 
+                </Frame>        
+       
+            </Grid>
+
+  <!--Carousel de Frutas-->
+       
+<CarouselView ItemsSource="{Binding fruits}" HeightRequest="300" PeekAreaInsets="0,0,220,0" BackgroundColor="Transparent">
+<CarouselView.ItemTemplate>
+<DataTemplate>
+    <StackLayout>
+        <Frame HeightRequest="240" WidthRequest="150" BackgroundColor="{Binding backgroundColor}" Padding="0" HasShadow="False" Margin="10" HorizontalOptions="CenterAndExpand" CornerRadius="10">
+            <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="140"/>
+                <RowDefinition Height="50"/>
+                <RowDefinition Height="25"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="30"/>
+            </Grid.ColumnDefinitions>
+   
+            <Image Grid.Row="0" Grid.ColumnSpan="2" Source="{Binding imgSource}"/>
+            <Label Grid.Row="1" Grid.ColumnSpan="2"  Text="{Binding fruitName}" FontAttributes="Bold" Margin="20,0,20,0" HorizontalOptions="Center" VerticalOptions="Center"/>
+            <Label Grid.Row="2" Text="{Binding fruitPrice}" FontAttributes="Bold" Margin="20,0,20,0"/>
+            <ImageButton Grid.Row="2" Grid.Column="1" Source="plus.png" HorizontalOptions="End" VerticalOptions="Center"/>
+
+            </Grid>
+        </Frame>
+    </StackLayout>
 
 
-                 <StackLayout Grid.Column="0"
-                              Grid.Row="0"
-                              Grid.RowSpan="3"
-                              Padding="0"
-                              Margin="0,0,10,0"
-                              >
+</DataTemplate>
+</CarouselView.ItemTemplate>
+</CarouselView>
 
-                <Frame IsClippedToBounds="true"
-                       Margin="0"
-                       Padding="0"
-                       HasShadow="False">
-                    <Image 
-                Source="{Binding imgSource}"
-                Aspect="AspectFill"
-                VerticalOptions="StartAndExpand"
-                HorizontalOptions="CenterAndExpand"/>
-            
-                </Frame>
-                 
 
-                
+
+ <!--Markets-->    
+
+    <Grid Margin="30,0,30,30" >
+    <Grid.RowDefinitions>
+        <RowDefinition Height="30"/>
+        <RowDefinition Height="*"/>
+    </Grid.RowDefinitions>
+    <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="*"/>
+        <ColumnDefinition Width="55"/>
+    </Grid.ColumnDefinitions>
+
+
+    <Label Grid.Column="0" Grid.Row="0" Text="Markets" FontAttributes="Bold" FontSize="28"/>
+    <Label Grid.Column="0" Grid.Row="1" Text="4 markets near you" FontAttributes="None" FontSize="12"/>
+
+
+        
+
+    </Grid>
+
+
+
+ <ListView ItemsSource="{Binding markets}" HasUnevenRows="True"   SeparatorVisibility="None" Margin="0" BackgroundColor="Transparent">
+<ListView.ItemTemplate>
+<DataTemplate>
+    <ViewCell>
+        <StackLayout HorizontalOptions="CenterAndExpand"  Padding="0" Margin="0" BackgroundColor="White" >
+            <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="75"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="200"/>
+            </Grid.ColumnDefinitions>
+
+
+                 <StackLayout Grid.Column="0" Grid.Row="0" Grid.RowSpan="3" Padding="0" Margin="0,0,10,0">
+                    <Frame IsClippedToBounds="true" Margin="0" Padding="0" HasShadow="False">
+                        <Image Source="{Binding imgSource}" Aspect="AspectFill" VerticalOptions="StartAndExpand"  HorizontalOptions="CenterAndExpand"/>
+                    </Frame>
+
                  </StackLayout>
               
+                    <StackLayout Grid.Column="1" Padding="0" Margin="0">
+                        <StackLayout Padding="0" Margin="0">
+                    <Label FontAttributes="Bold" Text="{Binding marketName}" Padding="0" Margin="0" HorizontalOptions="StartAndExpand"/>
+                    </StackLayout>
 
-                 <StackLayout Grid.Column="1"
-                              Padding="0"
-                              Margin="0"
-                               >
-                 <StackLayout Padding="0" Margin="0">
-                      <Label 
-                        FontAttributes="Bold"
-                        Text="{Binding marketName}"
-                        Padding="0"
-                        Margin="0"
-                        HorizontalOptions="StartAndExpand"/>
-                 </StackLayout>
                  
                    <StackLayout > 
-                       <Label
-                        FontSize="12"
-                        Text="{Binding marketSchedule}"
-                        Padding="0"
-                        Margin="0"
-                        HorizontalOptions="Start"/>
+                       <Label FontSize="12" Text="{Binding marketSchedule}" Padding="0" Margin="0" HorizontalOptions="Start"/>
                    </StackLayout>
 
-                  <StackLayout Orientation="Horizontal"
-                               Spacing="10"
-                               HeightRequest="13">
-
-                      <Image Source="estrella.png"
-                             WidthRequest="20"
-                             VerticalOptions="Center"/>
-
-                        <Label
-                        FontSize="12"
-                        Text="{Binding startsRate}"
-                        TextColor="#a87255"
-                        FontAttributes="Bold"
-                        Padding="0"
-                        Margin="0"
-                        HorizontalOptions="Start"/>
-
-                        <Label
-                        FontSize="12"
-                        Text="|"
-                        TextColor="#a87255"
-                        Padding="0"
-                        Margin="0"
-                        HorizontalOptions="Start"/>
-
-
-                      <Image Source="pin.png"/>
-
-                        <Label
-                        FontSize="12"
-                        Text="{Binding distance}"
-                        TextColor="#a87255"
-                        FontAttributes="Bold"
-                        Padding="0"
-                        Margin="0"
-                        HorizontalOptions="Start"/>
+                  <StackLayout Orientation="Horizontal" Spacing="10" HeightRequest="13">
+                    <Image Source="estrella.png"  WidthRequest="20" VerticalOptions="Center"/>
+                    <Label FontSize="12" Text="{Binding startsRate}" TextColor="#a87255" FontAttributes="Bold" Padding="0" Margin="0" HorizontalOptions="Start"/>
+                    <Label FontSize="12" Text="|" TextColor="#a87255" Padding="0" Margin="0" HorizontalOptions="Start"/>
+                    <Image Source="pin.png"/>
+                    <Label FontSize="12" Text="{Binding distance}" TextColor="#a87255" FontAttributes="Bold" Padding="0" Margin="0" HorizontalOptions="Start"/>
                   </StackLayout>
-                 </StackLayout>
+                </StackLayout>
             </Grid>
         </StackLayout>
                        
                
-                </ViewCell>
-            </DataTemplate>
-        </ListView.ItemTemplate>
-        
-    </ListView>
+    </ViewCell>
+</DataTemplate>
+</ListView.ItemTemplate>        
+</ListView>
+</StackLayout>
+</ScrollView>
+</Frame>
 
    
+
+<Grid Grid.Row="1" Margin="30,0,0,0">
+<Grid.ColumnDefinitions>
+    <ColumnDefinition Width="*"/>
+    <ColumnDefinition Width="7*"/>
+</Grid.ColumnDefinitions>
+  
+
+    <StackLayout Grid.Row="0" Orientation="Horizontal" BindableLayout.ItemsSource="{Binding fruitsCart}">   
+    <BindableLayout.ItemTemplate>
+    <DataTemplate>
+        <StackLayout Padding="0,0,20,0">
+            <ImageButton Source="{Binding fruitImage}" BackgroundColor="#ffe35d" HorizontalOptions="Start" WidthRequest="40" HeightRequest="40" CornerRadius="20" BorderColor="Transparent" BorderWidth="10"/>
+                <Button Text="{Binding fruitQuantity}" TranslationY="-20" TranslationX="12" BackgroundColor="#ffe35d" WidthRequest="12" HeightRequest="14"  TextColor="#4D4B4B" CornerRadius="10" FontAttributes="Bold"/>
+        </StackLayout>
+    </DataTemplate>
+    </BindableLayout.ItemTemplate>  
     </StackLayout>
-    </ScrollView>
-        </Frame>
 
-    
-
-    <StackLayout Grid.Row="1" BackgroundColor="#fed329" Padding="0" Margin="0">
-
-    </StackLayout>
+        <Label Grid.Column="1" Margin="10" HorizontalOptions="End" Text="$49,54" FontAttributes="Bold" TextColor="#4D4B4B" FontSize="20"/>
+        <Image Grid.Column="2" WidthRequest="30"/>
+</Grid>
 </Grid>
 
-
-
-    
-   
 </ContentPage>
