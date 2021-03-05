@@ -11,7 +11,7 @@
 
 <Grid BackgroundColor="#fed329">
 <Grid.RowDefinitions>
-    <RowDefinition Height="13*"/>
+    <RowDefinition Height="9*"/>
     <RowDefinition Height="*"/>
 </Grid.RowDefinitions>
 
@@ -41,7 +41,9 @@
 
   <!--Carousel de Frutas-->
        
-<CarouselView ItemsSource="{Binding fruits}" HeightRequest="300" PeekAreaInsets="0,0,220,0" BackgroundColor="Transparent">
+<CarouselView ItemsSource="{Binding fruits}" HeightRequest="300" PeekAreaInsets="0,0,220,0"  BackgroundColor="Transparent">
+
+
 <CarouselView.ItemTemplate>
 <DataTemplate>
     <StackLayout>
